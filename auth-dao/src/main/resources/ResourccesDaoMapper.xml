@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper 标签 用于指定配置文件所属的接口名，通过 namespace来指定 -->
+<mapper namespace="com.hzit.dao.ResourccesDao">
+
+    <!-- select 标签专门指定查询方法,其中 id属性代表方法名
+        parameterType 代表方法的参数数据类型
+        resultType:代表方法的返回的集合中的元素类型
+    -->
+    <select id="findAll" resultType="Resourcces">
+        select * from resourcces
+    </select>
+    <insert id="insert" parameterType="Resourcces">
+        insert into resourcces
+        values(#{rid} ,#{ rname},#{resurl},#{resorderno},#{ redsdes} ,#{createTime},#{updatetime} ,
+             #{createMan} ,#{updateMan} ,#{parentID}  )
+    </insert>
+    <update id="update" parameterType="Resourcces">
+        update resourcces set
+         rname=#{rname},resurl=#{rseurl},resorderno=#{resorderno},redsdes=#{redsdes},parentID=#{parentID}
+        where rid=#{rid}
+    </update>
+    <delete id="delete" parameterType="int" >
+        delete from resourcces where rid=#{rid}
+    </delete>
+    <select id="findRid" resultType="Resourcces" parameterType="int">
+        select * from resourcces where rid=#{rid}
+    </select>
+    <select id="findRname" resultType="Resourcces" parameterType="String">
+          select * from resourcces where rname=#{rname}
+    </select>
+</mapper>

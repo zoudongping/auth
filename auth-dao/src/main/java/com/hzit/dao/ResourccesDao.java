@@ -12,9 +12,7 @@ public interface ResourccesDao {
     public  List<Resourcces>  findAll ();
     public  Resourcces  findRid (String rid);
     public  Resourcces findRname (String rname);
-    public  boolean insert
-            (int rid,String rname,String resurl,  int resorderno,String redsdes,Date createTime,
-             Date updatetime,String createMan,String updateMan, int parentID);
+    public  boolean insert(Resourcces Resourcces);
     public  boolean  delete(int rid);
     public  boolean  update(int rid);
 }

@@ -15,7 +15,7 @@ public class SqlSessionHelper {
 	static{
 		Reader r;
 		try {
-			r= Resources.getResourceAsReader("mybatis.xml");
+			r= Resources.getResourceAsReader("mybaties-config.xml");
 			//产生session工厂对象，根据配置文件产生session工厂对象
 			System.out.println("读取配置文件成功");
 		    factory=new SqlSessionFactoryBuilder().build(r);
