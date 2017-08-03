@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper标签用于指定配置文件所属的接口名，通过namespace来指定 -->
+<mapper namespace="dao.UserinfoDao">
+    <!-- select标签专门指定查询方法,id代表方法名，
+    parameterType代表方法的参数数据类型
+    resultType代表方法的返回的集合中的元素类型-->
+    <select id="insertuser" parameterType="int" resultType="Userinfo">
+        insert into userinfo values(#{uid},#{uname},#{upass},#{ustatus})
+    </select>
+
+    <select id="findUser" parameterType="String" resultType="Userinfo">
+        select * from userinfo where uname=#{uname}
+    </select>
+
+    <update id="updatePwd" parameterType="Userinfo">
+        update userinfo set upass=#{newupass} where uname=#{uname} and upass=#{oldupass}
+    </update>
+
+    <delete id="deleteuser" parameterType="Userinfo">
+        delete from userinfo where uname=#{uname}
+    </delete>
+
+
+
+
+
+</mapper>
