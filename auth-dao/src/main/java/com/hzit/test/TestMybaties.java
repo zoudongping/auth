@@ -30,16 +30,19 @@ import java.util.List;
  */
 public class TestMybaties {
     public static void main(String[] args) {
-        Logger log= Logger.getLogger("TestMybaties");
+       /* Logger log= Logger.getLogger("TestMybaties");*/
 
         SqlSession session= SqlSessionHelper.getSqlSession();
         ResourccesDao res=session.getMapper(ResourccesDao.class);
         List<Resourcces> list=res.findAll();
+        for(Resourcces obj:list){
+            System.out.println(obj);
+        }
          //Logger log=Logger.getLogger("TestMybaties");
 
-        for(Resourcces o: list){
+        /*for(Resourcces o: list){
              log.debug(o);
-        }
+        }*/
 
 
 

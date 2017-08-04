@@ -29,4 +29,5 @@
     <select id="findRname" resultType="Resourcces" parameterType="String">
           select * from resourcces where rname=#{rname}
     </select>
+
 </mapper>
